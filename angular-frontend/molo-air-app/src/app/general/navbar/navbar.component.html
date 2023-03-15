@@ -1,0 +1,30 @@
+<div class="main-div">
+    <mat-toolbar class="Toolbar" color="primary">
+      <div class="toolbar-container">
+        <span class="example-app-name">Molo-Air</span>
+      </div>
+    </mat-toolbar>
+    <mat-drawer-container class="side-nav-container">
+      <mat-drawer mode="side" opened>
+        <div class="example-button-row">
+          <mat-nav-list>
+            <a [routerLink]="['']" mat-list-item routerLinkActive="active">
+              <span>Home</span>
+            </a>
+            <a [routerLink]="['/bookings']" mat-list-item routerLinkActive="active">
+              <span>Bookings</span>
+            </a>
+            <a [routerLink]="['/flights']" mat-list-item routerLinkActive="active">
+              <span>Flights</span>
+            </a>
+            <a [routerLink]="['/customers']" mat-list-item routerLinkActive="active">
+              <span>Customers</span>
+            </a>
+          </mat-nav-list>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content class="main-content">
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>

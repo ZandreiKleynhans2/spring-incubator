@@ -1,1 +1,36 @@
-<p>flight-screen works!</p>
+<table [dataSource]="dataSource" class="mat-elevation-z8 issueTable" mat-table matSort>
+    <ng-container matColumnDef="flightId">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Flight Id</th>
+      <td *matCellDef="let items" mat-cell> {{items.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="flightNumber">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Flight Number</th>
+      <td *matCellDef="let items" mat-cell> {{items.flightNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="origin">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Origin</th>
+      <td *matCellDef="let items" mat-cell> {{items.origin}} </td>
+    </ng-container>
+    <ng-container matColumnDef="destination">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Destination</th>
+       <td *matCellDef="let items" mat-cell> {{items.destination}} </td>
+    </ng-container>
+    <ng-container matColumnDef="departureTime">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Departure Time</th>
+       <td *matCellDef="let items" mat-cell> {{items.departureTime | date : 'medium'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="arrivalTime">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Arrival Time</th>
+      <td *matCellDef="let items" mat-cell> {{items.arrivalTime| date : 'medium'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seatsAvailable">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Seats Available</th>
+        <td *matCellDef="let items" mat-cell> {{items.seatsAvailable}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seatCost">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Seat Cost</th>
+        <td *matCellDef="let items" mat-cell> {{items.seatCost}} </td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>

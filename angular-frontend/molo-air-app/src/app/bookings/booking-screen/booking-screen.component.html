@@ -1,1 +1,20 @@
-<p>booking-screen works!</p>
+<table [dataSource]="dataSource" class="mat-elevation-z8 issueTable" mat-table matSort>
+    <ng-container matColumnDef="bookingId">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Booking Id</th>
+      <td *matCellDef="let items" mat-cell> {{items.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="referenceNumber">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Reference Number</th>
+      <td *matCellDef="let items" mat-cell> {{items.referenceNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="customerId">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Customer Id</th>
+      <td *matCellDef="let items" mat-cell> {{items.customerId}} </td>
+    </ng-container>
+    <ng-container matColumnDef="flightId">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Flight Id</th>
+       <td *matCellDef="let items" mat-cell> {{items.flightId}} </td>
+    </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>

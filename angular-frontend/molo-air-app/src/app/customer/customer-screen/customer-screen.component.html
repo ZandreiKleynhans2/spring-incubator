@@ -1,1 +1,32 @@
-<p>Customer Table comes here</p>
+<table [dataSource]="dataSource" class="mat-elevation-z8 issueTable" mat-table matSort>
+    <ng-container matColumnDef="customerId">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Customer ID</th>
+      <td *matCellDef="let items" mat-cell> {{items.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="username">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Username</th>
+      <td *matCellDef="let items" mat-cell> {{items.username}} </td>
+    </ng-container>
+    <ng-container matColumnDef="firstName">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> First Name</th>
+      <td *matCellDef="let items" mat-cell> {{items.firstName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="lastName">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Last Name</th>
+       <td *matCellDef="let items" mat-cell> {{items.lastName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="passportNumber">
+       <th *matHeaderCellDef mat-header-cell mat-sort-header> Passport Number</th>
+       <td *matCellDef="let items" mat-cell> {{items.passportNumber}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Email</th>
+      <td *matCellDef="let items" mat-cell> {{items.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="phoneNumber">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header> Phone Number</th>
+        <td *matCellDef="let items" mat-cell> {{items.phoneNumber}} </td>
+      </ng-container>
+    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+    <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+  </table>

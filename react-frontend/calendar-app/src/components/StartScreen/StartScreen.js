@@ -59,12 +59,12 @@ export const StartScreen = () => {
         </FormControl>
         <FormControl fullWidth>
           <FormLabel color="secondary">Please select time format</FormLabel>
-          <RadioGroup row name="time-format-radio-group" onChange={handleTimeFormatChange}>
+          <RadioGroup row name="time-format-radio-group" value={timeFormat} onChange={handleTimeFormatChange}>
             <FormControlLabel value="24h" control={<Radio color="secondary"/>} label="24h" />
             <FormControlLabel value="12h" control={<Radio color="secondary"/>} label="12h" />
           </RadioGroup>
         </FormControl>
-        <Button variant="contained" color="secondary" href="/timezone" disabled={isButtonDisabled}>
+        <Button variant="contained" color="secondary" href="/dashboard" disabled={isButtonDisabled}>
           Confirm
         </Button>
       </Stack>

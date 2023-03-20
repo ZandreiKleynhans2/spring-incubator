@@ -17,7 +17,7 @@ export class CustomerEndpointsService {
     let headers : HttpHeaders = new HttpHeaders();
     headers = headers.append('Authorization',environment.authToken);
     headers = headers.append('Content-Type','application/json');
-    const options = {withCredentials:true,headers};
+    const options = {withCredentials:false,headers};
     return this.http.get<Customer[]>(`${this.apiUrl}customers`, options);
   } 
 

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DashboardScreen } from "./components/DashboardScreen/DashboardScreen";
 import { CalendarView } from "./components/Calendar/CalendarView";
 import { Calendar } from "./components/NewCalendar/Calendar";
+import NewerCalendar from "./components/NewerCalendar/NewerCalendar";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/dashboard" Component={DashboardScreen} />
         <Route path="/calendar" Component={Calendar} />
         <Route path="/cal" Component={CalendarView} />
+        <Route path="/ncal" Component={NewerCalendar}/>
       </Routes>
     </BrowserRouter>
   );

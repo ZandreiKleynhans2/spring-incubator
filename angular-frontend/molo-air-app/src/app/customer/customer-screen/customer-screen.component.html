@@ -1,3 +1,6 @@
+<div class="table-header-container">
+  <button mat-raised-button color="accent" (click)="onAddCustomerClick()">Add Customer</button>
+</div>
 <table [dataSource]="dataSource" class="mat-elevation-z8 issueTable" mat-table matSort>
     <ng-container matColumnDef="customerId">
       <th *matHeaderCellDef mat-header-cell mat-sort-header>Customer ID</th>
@@ -26,7 +29,13 @@
     <ng-container matColumnDef="phoneNumber">
         <th *matHeaderCellDef mat-header-cell mat-sort-header> Phone Number</th>
         <td *matCellDef="let items" mat-cell> {{items.phoneNumber}} </td>
-      </ng-container>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header> Actions</th>
+      <td *matCellDef="let items" mat-cell> 
+          <!-- Add delete and edit buttons here  -->
+      </td>
+  </ng-container>
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
